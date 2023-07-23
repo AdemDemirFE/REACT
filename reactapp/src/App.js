@@ -2,9 +2,11 @@ import React from 'react';
 import './App.css';
 import User from './components/User';
 import Navbar from './components/Navbar';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faFacebookF , } from '@fortawesome/free-brands-svg-icons';
 function App() {
   return (
+    
     <div className='container'>
       <Navbar title="User App" />
       <hr />
@@ -16,6 +18,8 @@ function App() {
         name="2Adem Demir"
         department="2Yazılım"
         salary="120000" />
+
+        
     </div>
 
   );
