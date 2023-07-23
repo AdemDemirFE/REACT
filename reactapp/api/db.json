@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "id": "unique-1",
+            "name": "Adem Demir",
+            "salary": "10000",
+            "department": "Yazılım"
+        },
+        {
+            "id": "unique-2",
+            "name": "2 Adem Demir",
+            "salary": "4255",
+            "department": "Yazılım"
+        }
+    ]
+}
