@@ -24,6 +24,10 @@ class User extends Component {
         //Consumer Dispatch
         dispatch({type : "DELETE_USER", payload:id})
     }
+
+    componentWillUnmount() {
+        console.log("Component Will Unmount");
+    }
     render() {
         const { name, department, salary } = this.props;
         const { isVisible } = this.state;
@@ -36,7 +40,9 @@ class User extends Component {
                         return (
                             <div className="col-md-8 mb-4">
                                 <div className="card">
-                                    <div className="card-header d-flex justify-content-between align-items-center">
+                                    <div
+                                     style={isVisible ? {backgroundColor: "#56AEFF", color: "white"} : null}
+                                     className="card-header d-flex justify-content-between align-items-center">
                                         <h4 className="d-inline" onClick={this.onClickEvent}>{name}</h4>
                                         <i onClick={this.onDeleteUSer.bind(this,dispatch)} className="far fa-trash-alt" style={{ cursor: "pointer" }}></i>
                                     </div>
@@ -61,7 +67,7 @@ User.propTypes = {
     name: PropTypes.string.isRequired,
     salary: PropTypes.string.isRequired,
     department: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired
+    id: PropTypes.string.isRequired
 };
 
 export default User;

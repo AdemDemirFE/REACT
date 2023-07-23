@@ -10,6 +10,11 @@ const reducer = (state, action) => {
                 ...state,//spret operatörü javascript 6 ile gelen bir özellik
                 users: state.users.filter(user => action.payload !== user.id)
             }
+        case "ADD_USER":
+            return{
+                ...state,
+                users: [...state.users, action.payload]
+            }
         default:
             return state
     }
@@ -19,13 +24,13 @@ export class UserProvider extends Component {
     state = {
         users: [
             {
-                id: 1,
+                id: "unique-1",
                 name: "Adem Demir",
                 salary: "10000",
                 department: "Yazılım"
             },
             {
-                id: 2,
+                id: "unique-2",
                 name: "Adem fe",
                 salary: "102000",
                 department: "Yazılım"
